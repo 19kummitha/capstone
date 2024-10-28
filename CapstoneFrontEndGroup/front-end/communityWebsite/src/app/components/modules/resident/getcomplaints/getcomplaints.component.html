@@ -1,0 +1,15 @@
+<div *ngIf="complaints" class="complaints-container">
+    <h2>My Complaints</h2>
+    <ul class="complaints-list">
+      <li *ngFor="let complaint of complaints" class="complaint-item">
+        <h3>{{complaint.title}}</h3>
+        <p>{{ complaint.description }}</p>
+        <button (click)="deleteComplaint(complaint.complaintId)" class="btn btn-danger">delete</button>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="!complaints" class="no-complaints">
+    <p>No complaints found.</p>
+  </div>
+  

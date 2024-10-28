@@ -1,0 +1,91 @@
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" routerLink="/dashboard/resident">
+          <i class="bi bi-telephone"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse">
+          <i class="bi bi-globe"></i><span>Service</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a routerLink="/dashboard/resident/requestservice">
+              <i class="bi bi-circle"></i><span>Request service</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/dashboard/resident/viewservices">
+              <i class="bi bi-circle"></i><span>Available Services</span>
+            </a>
+          </li>
+          
+          
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" routerLink="/dashboard/resident/viewpost">
+          <i class="bi bi-file-post"></i>
+          <span>Posts</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" routerLink="/dashboard/resident/viewevents">
+          <i class="bi bi-calendar"></i>
+          <span>Events</span>
+        </a>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#service-nav" data-bs-toggle="collapse">
+          <i class="bi bi-exclamation-circle"></i><span>Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="service-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a routerLink="/dashboard/resident/complaints">
+              <i class="bi bi-circle"></i><span>Create Complaint</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/dashboard/resident/getcomplaints">
+              <i class="bi bi-circle"></i><span>Veiw Complaints</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link collapsed" routerLink="/dashboard/resident/weather">
+          <i class="bi bi-thermometer-sun"></i>
+          <span>Weather</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" routerLink="/dashboard/resident/residentcontact">
+          <i class="bi bi-telephone"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" routerLink="pages-register.html">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li> -->
+
+    </ul>
+
+  </aside>

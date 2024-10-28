@@ -1,0 +1,37 @@
+
+
+<div class="weather-dashboard">
+    <div class="location-info">
+        <h1>{{ location.name }}, {{ location.region }}</h1>
+        <p>{{ location.localtime }}</p>
+    </div>
+  
+    <div class="cards-container">
+        <div class="current-weather-card">
+           
+            <h2> <img src="http:{{ currentWeather.condition.icon }}" alt="Weather Icon" class="weather-icon">{{ currentWeather.condition.text }}</h2>
+            <p>Temperature: <strong>{{ currentWeather.temp_c }}°C</strong></p>
+            <p>Feels Like: {{ currentWeather.feelslike_c }}°C</p>
+            <p>Humidity: {{ currentWeather.humidity }}%</p>
+            <p>Wind: {{ currentWeather.wind_kph }} kph ({{ currentWeather.wind_dir }})</p>
+        </div>
+        <div class="current-weather-card">
+        <br>
+           <b><h2>Today Forecast</h2></b> 
+          <br>
+            <p>Max Temp: {{ forecast.day.maxtemp_c }}°C</p>
+            <p>Min Temp: {{ forecast.day.mintemp_c }}°C</p>
+            <p>Chance of Rain: {{ forecast.day.daily_chance_of_rain }}%</p>
+            <p>Sunrise: {{ forecast.astro.sunrise }} <br>  Sunset: {{ forecast.astro.sunset }} </p>
+           
+        </div>
+    </div>
+  
+    <div class="charts-container">
+        <div class="chart-wrapper">
+            <h3>Temperature Forecast</h3>
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+  </div>
+  

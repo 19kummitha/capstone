@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Service Requests</h2>
+  
+    <div *ngIf="serviceRequests.length > 0; else noRequests">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Resident Name</th>
+            <th>Service Type</th>
+            <th>Service Description</th>
+            <th>Flat No</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of serviceRequests;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{ request.residentName }}</td>
+            <td>{{ request.serviceType }}</td>
+            <td>{{ request.serviceDescription }}</td>
+            <td>{{ request.flatNo }}</td>
+            <td>{{ request.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <ng-template #noRequests>
+      <p>No service requests found.</p>
+    </ng-template>
+  
+    
+  </div>
+  

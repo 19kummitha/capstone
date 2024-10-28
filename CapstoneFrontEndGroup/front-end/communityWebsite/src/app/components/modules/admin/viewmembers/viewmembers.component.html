@@ -1,0 +1,49 @@
+<div class="container-fluid mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h1 class="display-6 mb-0">Residents</h1>
+    </div>
+
+    <div class="card-body">
+      <div class="d-flex justify-content-center my-4" *ngIf="loading">
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="visually-hidden">Loading residents...</span>
+        </div>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="error">
+        {{ error }}
+      </div>
+
+      <div *ngIf="residents && residents.length > 0">
+        <table class="table table-hover table-bordered mt-3">
+          <thead class="thead-light">
+            <tr>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Flat Number</th>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let resident of residents">
+              <td>{{ resident.userName }}</td>
+              <td>{{ resident.email }}</td>
+              <td>{{ resident.flatNo }}</td>
+              <td>{{ resident.name }}</td>
+              <td>{{ resident.phoneNumber }}</td>
+              <td>
+                <button (click)="deleteResident(resident.id)" class="btn  btn-danger"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="!residents || residents.length === 0" class="text-center text-muted mt-3">
+        <p>No residents available.</p>
+      </div>
+    </div>
+  </div>
+</div>

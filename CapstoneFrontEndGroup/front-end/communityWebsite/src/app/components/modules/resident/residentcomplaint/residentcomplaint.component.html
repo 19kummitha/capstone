@@ -1,0 +1,35 @@
+<div class="add-complaint-form">
+    <h2>Add a Complaint</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="personName" class="addcomplaint"><b>Person Name</b></label>
+        <input type="text" id="personName" [(ngModel)]="complaint.personName" name="personName" class="form-control" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="flatNo" class="addcomplaint"><b>Flat Number</b></label>
+        <input type="text" id="flatNo" [(ngModel)]="complaint.flatNo" name="flatNo" class="form-control" required>
+      </div>
+  <br>
+      <div class="form-group">
+        <label for="title" class="addcomplaint"><b>Complaint Title</b></label>
+        <input type="text" id="title" [(ngModel)]="complaint.title" name="title" class="form-control" required>
+      </div>
+  <br>
+      <div class="form-group">
+        <label for="description" class="addcomplaint"><b>Complaint Description</b></label>
+        <textarea id="description" [(ngModel)]="complaint.description" name="description" class="form-control" required></textarea>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit Complaint</button>
+  
+      <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+      </div>
+  
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+  

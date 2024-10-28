@@ -1,0 +1,14 @@
+.badge-success {
+    background-color: green;
+    color: white;
+    margin: auto;
+  }
+  
+  .badge-warning {
+    background-color: orange;
+    color: black;
+    margin:auto;
+  }
+  .customCenter{
+    margin-top: 0.5rem;
+  }

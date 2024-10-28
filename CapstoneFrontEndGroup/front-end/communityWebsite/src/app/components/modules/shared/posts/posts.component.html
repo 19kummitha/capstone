@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let post of posts">
+      <div class="card mb-4">
+        
+        <img *ngIf="post.mediaUrl" [src]="post.mediaUrl" class="card-img-top img-fluid fixed-image" alt="Post media">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.content }}</p>
+          <p class="card-text">
+            <small class="text-muted">Posted on {{ post.createdAt | date:'medium' }}</small>
+          </p>
+          <button *ngIf="isAdmin" (click)="deletePost(post.id)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

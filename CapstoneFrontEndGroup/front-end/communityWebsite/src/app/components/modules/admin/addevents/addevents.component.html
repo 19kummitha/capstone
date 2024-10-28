@@ -1,0 +1,46 @@
+<form [formGroup]="addEventForm" (ngSubmit)="createEvent()" novalidate>
+  <h1>Add Event</h1>
+    <div class="form-group">
+      <label for="name"></label><b>Event Name</b>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="name" 
+        formControlName="name" 
+        placeholder="Enter event name">
+      <small *ngIf="validateControl('name')" class="text-danger">
+        <span *ngIf="validateControlError('name', 'required')">Event name is required.</span>
+        <span *ngIf="validateControlError('name', 'minlength')">Event name must be at least 3 characters long.</span>
+      </small>
+    </div>
+  
+    <div class="form-group">
+      <label for="date"><b>Event Date</b></label>
+      <input 
+        type="date" 
+        class="form-control" 
+        id="date" 
+        [min]="minDate"
+        formControlName="date">
+      <small *ngIf="validateControl('date')" class="text-danger">
+        <span *ngIf="validateControlError('date', 'required')">Event date is required.</span>
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="description"><b>Event Description</b></label>
+      <textarea 
+        class="form-control" 
+        id="description" 
+        formControlName="description" 
+        placeholder="Enter event description"></textarea>
+      <small *ngIf="validateControl('description')" class="text-danger">
+        <span *ngIf="validateControlError('description', 'required')">Event description is required.</span>
+        <span *ngIf="validateControlError('description', 'minlength')">Description must be at least 5 characters long.</span>
+      </small>
+    </div>
+  <br>
+    <button type="submit" class="btn btn-primary" [disabled]="addEventForm.invalid">Create Event</button>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  </form>
+  

@@ -1,0 +1,48 @@
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .loading, .error {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .loading p, .error p {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .error p {
+    color: red;
+  }
+  
+  .residents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .residents-table th, .residents-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .residents-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .residents-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .residents-table tr:hover {
+    background-color: #f1f1f1;
+  }

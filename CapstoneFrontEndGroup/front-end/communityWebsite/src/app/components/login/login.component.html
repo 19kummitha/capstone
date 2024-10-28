@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2 class="card-title text-center">Login</h2>
+  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid Username or password</div>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-login">
+    <div class="form-group">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" id="username" name="username" class="form-control" formControlName="username" [class.is-invalid]="validateControl('username')" />
+      <span *ngIf="validateControlError('username', 'required')" class="text-danger invalid-feedback">
+        username is required
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" name="password" class="form-control" formControlName="password" [class.is-invalid]="validateControl('password')" />
+      <span *ngIf="validateControlError('password', 'required')" class="text-danger invalid-feedback">
+        password is required
+      </span>
+    </div>
+    <div class="text-center mt-3">
+      <button type="submit" class="btn" [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </form>
+  <div class="text-center mt-3">
+    <p>Don't have an account?
+      <a routerLink="/signup" class="btn-sm btn-secondary">Sign Up</a>
+    </p>
+  </div>
+</div>
+<br>

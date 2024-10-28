@@ -1,0 +1,8 @@
+.navbar
+{
+    background-color: #2E4053;
+}
+a:active{
+    background-color: #E5E5EA;
+    border-radius: 5px;
+}

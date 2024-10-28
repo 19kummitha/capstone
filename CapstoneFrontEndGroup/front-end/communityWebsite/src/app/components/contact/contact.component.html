@@ -1,0 +1,93 @@
+<div class="container my-5">
+  <!-- Contact Us Header -->
+  <div class="text-center mb-5">
+    <h1 class="display-4 text-dark">Contact Us</h1>
+    <p class="lead text-dark">We'd love to hear from you! Reach out to us with any questions, comments, or feedback.</p>
+  </div>
+
+  <!-- Contact Form Section -->
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm border-light">
+        <div class="card-body">
+          <h5 class="card-title text-dark mb-4">Get in Touch</h5>
+          <form [formGroup]="contactForm" >
+            <div class="mb-3">
+              <label for="firstname" class="form-label">Name</label>
+              <input type="text" class="form-control" id="firstname"formControlName="name" [class.is-invalid]="validateControl('name')" placeholder="Enter your name">
+              <span *ngIf="validateControlError('name', 'required')" class="text-danger invalid-feedback">
+                Name is required
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="lastname" class="form-label">Email</label>
+              <input type="email" class="form-control" id="lastname" formControlName="email" [class.is-invalid]="validateControl('email')" placeholder="Enter your email">
+              <span *ngIf="validateControlError('email', 'required')" class="text-danger invalid-feedback">
+                Email is required
+              </span>
+              <span *ngIf="validateControlError('email', 'email')" class="text-danger invalid-feedback">
+                Email is invalid
+              </span>
+            </div>
+      
+            <div class="mb-3">
+              <label for="username" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="username" formControlName="subject" [class.is-invalid]="validateControl('subject')" placeholder="Subject">
+              <span *ngIf="validateControlError('subject', 'required')" class="text-danger invalid-feedback">
+                subject is required
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" formControlName="message" [class.is-invalid]="validateControl('message')" placeholder="Type your message here"></textarea>
+            
+            <span *ngIf="validateControlError('message', 'required')" class="text-danger invalid-feedback">
+              message is required
+            </span>
+          </div>
+            
+            <div class="signpubtn">
+              <button type="submit" [disabled]= "contactForm.invalid"class="btn btn-dark btn-block">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Information Section -->
+  <div class="row mt-5">
+    <div class="col-md-4 text-center">
+      <div class="card shadow-sm border-light">
+        <div class="card-body">
+          <i class="bi bi-geo-alt-fill text-dark mb-3" style="font-size: 2rem;"></i>
+          <h5 class="card-title text-dark">Our Location</h5>
+          <p class="card-text">Technopark Phase II, Service Road, Kulathoor, Thiruvananthapuram, Kerala 695583</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="card shadow-sm border-light">
+        <div class="card-body">
+          <i class="bi bi-telephone-fill text-dark mb-3" style="font-size: 2rem;"></i>
+          <h5 class="card-title text-dark">Call Us</h5>
+          <br>
+          <p class="card-text">+91 999 999 9999</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="card shadow-sm border-light">
+        <div class="card-body">
+          <i class="bi bi-envelope-fill text-dark mb-3" style="font-size: 2rem;"></i>
+          <h5 class="card-title text-dark">Email Us</h5>
+          <br>
+          <p class="card-text">{{'communityconnect@gmail.com'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">

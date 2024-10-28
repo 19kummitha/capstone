@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="h4 mb-0">Service Providers</h2>
+        </div>
+        <br><br>
+        <div class="card-body">
+            <!-- Error message -->
+            <div *ngIf="error" class="alert alert-danger">
+                {{ error }}
+            </div>
+  
+            <!-- Service Providers List -->
+            <div *ngIf="serviceProviders && serviceProviders.length > 0">
+                <table class="table table-hover table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Service Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let provider of serviceProviders; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ provider.name }}</td>
+                            <td>{{ provider.email }}</td>
+                            <td>{{ provider.phoneNumber }}</td>
+                            <td>{{ provider.serviceType }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+  
+            <!-- No Service Providers Message -->
+            <div *ngIf="serviceProviders && serviceProviders.length === 0" class="text-center text-muted">
+                <p>No service providers available.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  

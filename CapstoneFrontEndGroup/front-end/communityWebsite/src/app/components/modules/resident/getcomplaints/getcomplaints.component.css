@@ -1,0 +1,52 @@
+.complaints-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .complaints-container h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .complaints-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .complaint-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transition: transform 0.3s;
+  }
+  
+  .complaint-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .complaint-item h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .complaint-item p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .no-complaints {
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+  }
+  
